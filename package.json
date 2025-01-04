@@ -1,27 +1,42 @@
 {
-  "name": "next-abuse-master",
+  "name": "socket-abuse-masker",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "dev:socket": "NODE_OPTIONS='--loader ts-node/esm --trace-warnings' ts-node server.mts",
     "build": "next build",
+    "build:socket": "next build && tsc --project tsconfig.server.json",
     "start": "next start",
+    "start:socket":"NODE_ENV=production node dist/server.mjs",
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.1.1",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.469.0",
+    "next": "15.1.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.1.3"
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
     "eslint": "^9",
     "eslint-config-next": "15.1.3",
-    "@eslint/eslintrc": "^3"
+    "eslint-config-prettier": "^9.1.0",
+    "postcss": "^8",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
